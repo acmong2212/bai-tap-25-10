@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Enter a number: <input type="text" id="number">
+<input type="button" value="Show" onclick="check()">
+<p id="result"></p>
+</body>
+<script>
+    function check (){
+        let num = +document.getElementById('number').value
+        let flag = true;
+        if (num < 2){
+            flag = false;
+        }  else {
+            for (let i = 2; i <= Math.sqrt(num); i ++) {
+                if (num % i === 0){
+                    flag = false;
+                    break;
+                }
+            }
+        }
+        if (flag === true){
+            document.getElementById('result').innerHTML = num + " Là số nguyên tố "
+        } else{
+            document.getElementById('result').innerHTML = num + " không phải là số nguyên tố "
+        }
+    }
+
+</script>
+</html>
